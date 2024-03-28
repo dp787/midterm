@@ -1,5 +1,4 @@
 import logging
-import pandas as pd
 
 # Configure logging settings
 logging.basicConfig(
@@ -9,6 +8,7 @@ logging.basicConfig(
     filemode='a'  # Specify the file mode ('a' for append)
 )
 
+
 class Calculator:
     commands = {
         'add': 'Addition',
@@ -16,33 +16,42 @@ class Calculator:
         'multiply': 'Multiplication',
         'divide': 'Division',
         'menu': 'Display Menu',
+        'load_history': 'Load History',
+        'save_history': 'Save History',
+        'clear_history': 'Clear History',
+        'delete_history': 'Delete History'
     }
+
+    history = []
 
     @staticmethod
     def add(a: float, b: float) -> float:
         result = a + b
+        Calculator.history.append({'Operation': 'Addition', 'Result': result})
         logging.info(f"Performed addition: {a} + {b} = {result}")
         return result
 
     @staticmethod
     def subtract(a: float, b: float) -> float:
         result = a - b
+        Calculator.history.append({'Operation': 'Subtraction', 'Result': result})
         logging.info(f"Performed subtraction: {a} - {b} = {result}")
         return result
 
     @staticmethod
     def multiply(a: float, b: float) -> float:
         result = a * b
+        Calculator.history.append({'Operation': 'Multiplication', 'Result': result})
         logging.info(f"Performed multiplication: {a} * {b} = {result}")
         return result
 
     @staticmethod
     def divide(a: float, b: float) -> float:
-        # LBYL (Look Before You Leap) approach
         if b == 0:
             logging.error("Attempted to divide by zero.")
             raise ValueError("Cannot divide by zero.")
         result = a / b
+        Calculator.history.append({'Operation': 'Division', 'Result': result})
         logging.info(f"Performed division: {a} / {b} = {result}")
         return result
 
@@ -66,20 +75,57 @@ class Calculator:
         elif command == 'multiply':
             return cls.multiply(2, 3)
         elif command == 'divide':
-            # EAFP (Easier to Ask for Forgiveness than Permission) approach
-            try:
-                return cls.divide(6, 2)
-            except ValueError as e:
-                logging.error(str(e))
-                return None
+            return cls.divide(6, 2)
         elif command == 'menu':
             cls.display_menu()
+        elif command == 'load_history':
+            cls.load_history()
+        elif command == 'save_history':
+            cls.save_history()
+        elif command == 'clear_history':
+            cls.clear_history()
+        elif command == 'delete_history':
+            cls.delete_history()
         else:
             logging.error(f"Invalid command: {command}")
             raise ValueError("Invalid command")
 
+    @classmethod
+    def load_history(cls):
+        try:
+            with open('calculation_history.txt', 'r') as file:
+                cls.history = eval(file.read())
+                logging.info("Loaded calculation history.")
+        except FileNotFoundError:
+            logging.warning("No calculation history file found.")
 
-def perform_calculation_from_dataframe(df: pd.DataFrame, operation: str):
+    @classmethod
+    def save_history(cls):
+        with open('calculation_history.txt', 'w') as file:
+            file.write(str(cls.history))
+        logging.info("Saved calculation history.")
+
+    @classmethod
+    def clear_history(cls):
+        cls.history = []
+        logging.info("Cleared calculation history.")
+
+    @classmethod
+    def delete_history(cls):
+        try:
+            import os
+            os.remove('calculation_history.txt')
+            cls.history = []
+            logging.info("Deleted calculation history.")
+        except FileNotFoundError:
+            logging.warning("No calculation history file found.")
+
+
+def perform_calculation_from_dataframe(df):
+    operation = input("Enter operation (add/subtract/multiply/divide): ")
+    if operation not in ['add', 'subtract', 'multiply', 'divide']:
+        print("Invalid operation")
+        return
     if operation == 'add':
         return df.sum().sum()
     elif operation == 'subtract':
@@ -88,16 +134,16 @@ def perform_calculation_from_dataframe(df: pd.DataFrame, operation: str):
         return df.product().product()
     elif operation == 'divide':
         return df.iloc[0].div(df.iloc[1]).prod()
-    else:
-        raise ValueError("Invalid operation")
+
 
 # Example usage of Calculator with pandas DataFrame
 if __name__ == "__main__":
+    import pandas as pd
+
     # Create a sample DataFrame
     data = {'A': [1, 2, 3], 'B': [4, 5, 6]}
     df = pd.DataFrame(data)
 
     # Perform calculation on DataFrame using Calculator
-    result = perform_calculation_from_dataframe(df, 'add')
-    print("Result of adding DataFrame elements:", result)
-
+    result = perform_calculation_from_dataframe(df)
+    print("Result of operation on DataFrame elements:", result)
