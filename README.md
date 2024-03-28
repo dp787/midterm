@@ -69,6 +69,9 @@ This project is an advanced Python-based calculator application developed as a m
 - [Logging Implementation](https://github.com/dp787/midterm/blob/main/calculator/calculations.py): Illustrates the implementation of logging with dynamic configuration. Documentation that is being used to showcase the iteration of Logging are the files within the "Calculator" folder. 
 - [Exception Handling](https://github.com/dp787/midterm/blob/main/calculator/calculator.py): Shows examples of both LBYL and EAFP approaches for handling exceptions. Implemented within the calculaor.py file.
 
+## Demonstration 
+- [Video]()
+
 ## Contributors
 - [Devendra Pitam](https://github.com/dp787) - Project Manager
 - [Additional Contributor] - No Additional Contributor 
