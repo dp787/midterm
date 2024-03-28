@@ -38,6 +38,7 @@ class Calculator:
 
     @staticmethod
     def divide(a: float, b: float) -> float:
+        # LBYL (Look Before You Leap) approach
         if b == 0:
             logging.error("Attempted to divide by zero.")
             raise ValueError("Cannot divide by zero.")
@@ -65,7 +66,12 @@ class Calculator:
         elif command == 'multiply':
             return cls.multiply(2, 3)
         elif command == 'divide':
-            return cls.divide(6, 2)
+            # EAFP (Easier to Ask for Forgiveness than Permission) approach
+            try:
+                return cls.divide(6, 2)
+            except ValueError as e:
+                logging.error(str(e))
+                return None
         elif command == 'menu':
             cls.display_menu()
         else:
@@ -94,3 +100,4 @@ if __name__ == "__main__":
     # Perform calculation on DataFrame using Calculator
     result = perform_calculation_from_dataframe(df, 'add')
     print("Result of adding DataFrame elements:", result)
+
