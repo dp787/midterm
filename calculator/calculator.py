@@ -1,4 +1,5 @@
 import logging
+import pandas as pd
 
 # Configure logging settings
 logging.basicConfig(
@@ -70,3 +71,26 @@ class Calculator:
         else:
             logging.error(f"Invalid command: {command}")
             raise ValueError("Invalid command")
+
+
+def perform_calculation_from_dataframe(df: pd.DataFrame, operation: str):
+    if operation == 'add':
+        return df.sum().sum()
+    elif operation == 'subtract':
+        return df.diff().dropna().sum().sum()
+    elif operation == 'multiply':
+        return df.product().product()
+    elif operation == 'divide':
+        return df.iloc[0].div(df.iloc[1]).prod()
+    else:
+        raise ValueError("Invalid operation")
+
+# Example usage of Calculator with pandas DataFrame
+if __name__ == "__main__":
+    # Create a sample DataFrame
+    data = {'A': [1, 2, 3], 'B': [4, 5, 6]}
+    df = pd.DataFrame(data)
+
+    # Perform calculation on DataFrame using Calculator
+    result = perform_calculation_from_dataframe(df, 'add')
+    print("Result of adding DataFrame elements:", result)
