@@ -70,8 +70,8 @@ This project is an advanced Python-based calculator application developed as a m
 - [Exception Handling](link_to_code): Shows examples of both LBYL and EAFP approaches for handling exceptions.
 
 ## Contributors
-- [Your Name](link_to_your_profile) - Role/Contribution
-- [Additional Contributor](link_to_profile) - Role/Contribution
+- [Devendra Pitam](https://github.com/dp787) - Project Manager
+- [Additional Contributor] - No Additional Contributor 
 
 ## License
 This project is licensed under the [MIT License](link_to_license).
