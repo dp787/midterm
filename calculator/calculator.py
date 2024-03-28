@@ -1,13 +1,13 @@
+import os
 import logging
 
-# Configure logging settings
+# Configure logging settings using environment variables
 logging.basicConfig(
-    level=logging.DEBUG,  # Set the minimum logging level
+    level=os.getenv('LOG_LEVEL', 'DEBUG'),  # Set the minimum logging level, default to DEBUG
     format='%(asctime)s - %(levelname)s - %(message)s',  # Define the log format
-    filename='app.log',  # Specify the log file name
+    filename=os.getenv('LOG_FILE', 'app.log'),  # Specify the log file name, default to app.log
     filemode='a'  # Specify the file mode ('a' for append)
 )
-
 
 class Calculator:
     commands = {
@@ -147,3 +147,4 @@ if __name__ == "__main__":
     # Perform calculation on DataFrame using Calculator
     result = perform_calculation_from_dataframe(df)
     print("Result of operation on DataFrame elements:", result)
+
