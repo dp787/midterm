@@ -66,7 +66,7 @@ This project is an advanced Python-based calculator application developed as a m
 
 ## Code Illustration
 - [Environment Variables Configuration](link_to_code): Demonstrates the use of environment variables for configuration.
-- [Logging Implementation](link_to_code): Illustrates the implementation of logging with dynamic configuration.
+- [Logging Implementation](https://github.com/dp787/midterm/blob/main/calculator/calculator.py): Illustrates the implementation of logging with dynamic configuration. Documentation that is being used to showcase the iteration of Logging are the files within the "Calculator" folder. 
 - [Exception Handling](link_to_code): Shows examples of both LBYL and EAFP approaches for handling exceptions.
 
 ## Contributors
