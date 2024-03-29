@@ -1,3 +1,19 @@
 2024-03-27 17:32:01,730 - ERROR - Not enough arguments provided.
 2024-03-27 17:32:21,854 - ERROR - Not enough arguments provided.
 2024-03-28 08:52:39,127 - ERROR - Not enough arguments provided.
+2024-03-29 16:38:02,454 - ERROR - Not enough arguments provided.
+2024-03-29 16:39:09,279 - ERROR - Not enough arguments provided.
+2024-03-29 16:46:19,864 - ERROR - Not enough arguments provided.
+2024-03-29 16:50:18,047 - ERROR - Not enough arguments provided.
+2024-03-29 16:51:07,318 - ERROR - Not enough arguments provided.
+2024-03-29 16:51:40,057 - ERROR - Not enough arguments provided.
+2024-03-29 16:52:39,468 - ERROR - Not enough arguments provided.
+2024-03-29 16:53:49,555 - ERROR - Not enough arguments provided.
+2024-03-29 16:54:21,190 - ERROR - Not enough arguments provided.
+2024-03-29 16:54:23,632 - ERROR - Not enough arguments provided.
+2024-03-29 16:54:37,443 - INFO - Performed addition: 0.0 + 5.0 = 5.0
+2024-03-29 16:54:37,443 - INFO - Performed operation: 0.0 add 5.0 = 5.0
+2024-03-29 16:56:12,520 - INFO - Performed addition: 0.0 + 5.0 = 5.0
+2024-03-29 16:56:12,520 - INFO - Performed operation: 0.0 add 5.0 = 5.0
+2024-03-29 16:56:14,437 - INFO - Performed operation: 0.5 sin None = 0.479425538604203
+2024-03-29 16:56:22,031 - INFO - Performed operation: 0.5 log None = -0.6931471805599453

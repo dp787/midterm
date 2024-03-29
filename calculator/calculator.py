@@ -1,5 +1,6 @@
 import os
 import logging
+import math  # Import math module for trigonometric functions
 
 # Configure logging settings using environment variables
 logging.basicConfig(
@@ -19,7 +20,12 @@ class Calculator:
         'load_history': 'Load History',
         'save_history': 'Save History',
         'clear_history': 'Clear History',
-        'delete_history': 'Delete History'
+        'delete_history': 'Delete History',
+        'sin': 'Sine',
+        'cos': 'Cosine',
+        'tan': 'Tangent',
+        'exp': 'Exponential',
+        'log': 'Logarithm'
     }
 
     history = []
@@ -55,6 +61,41 @@ class Calculator:
         logging.info(f"Performed division: {a} / {b} = {result}")
         return result
 
+    @staticmethod
+    def sin(x: float) -> float:
+        result = math.sin(x)
+        Calculator.history.append({'Operation': 'Sine', 'Result': result})
+        logging.info(f"Performed sine calculation: sin({x}) = {result}")
+        return result
+
+    @staticmethod
+    def cos(x: float) -> float:
+        result = math.cos(x)
+        Calculator.history.append({'Operation': 'Cosine', 'Result': result})
+        logging.info(f"Performed cosine calculation: cos({x}) = {result}")
+        return result
+
+    @staticmethod
+    def tan(x: float) -> float:
+        result = math.tan(x)
+        Calculator.history.append({'Operation': 'Tangent', 'Result': result})
+        logging.info(f"Performed tangent calculation: tan({x}) = {result}")
+        return result
+
+    @staticmethod
+    def exp(x: float) -> float:
+        result = math.exp(x)
+        Calculator.history.append({'Operation': 'Exponential', 'Result': result})
+        logging.info(f"Performed exponential calculation: exp({x}) = {result}")
+        return result
+
+    @staticmethod
+    def log(x: float) -> float:
+        result = math.log(x)
+        Calculator.history.append({'Operation': 'Logarithm', 'Result': result})
+        logging.info(f"Performed logarithm calculation: log({x}) = {result}")
+        return result
+
     @classmethod
     def display_menu(cls):
         logging.info("Displayed menu.")
@@ -68,14 +109,8 @@ class Calculator:
             logging.error(f"Invalid command: {command}")
             raise ValueError("Invalid command")
 
-        if command == 'add':
-            return cls.add(2, 3)
-        elif command == 'subtract':
-            return cls.subtract(5, 3)
-        elif command == 'multiply':
-            return cls.multiply(2, 3)
-        elif command == 'divide':
-            return cls.divide(6, 2)
+        if command in ('add', 'subtract', 'multiply', 'divide'):
+            return getattr(cls, command)(2, 3)  # Example usage with default values
         elif command == 'menu':
             cls.display_menu()
         elif command == 'load_history':
@@ -119,32 +154,3 @@ class Calculator:
             logging.info("Deleted calculation history.")
         except FileNotFoundError:
             logging.warning("No calculation history file found.")
-
-
-def perform_calculation_from_dataframe(df):
-    operation = input("Enter operation (add/subtract/multiply/divide): ")
-    if operation not in ['add', 'subtract', 'multiply', 'divide']:
-        print("Invalid operation")
-        return
-    if operation == 'add':
-        return df.sum().sum()
-    elif operation == 'subtract':
-        return df.diff().dropna().sum().sum()
-    elif operation == 'multiply':
-        return df.product().product()
-    elif operation == 'divide':
-        return df.iloc[0].div(df.iloc[1]).prod()
-
-
-# Example usage of Calculator with pandas DataFrame
-if __name__ == "__main__":
-    import pandas as pd
-
-    # Create a sample DataFrame
-    data = {'A': [1, 2, 3], 'B': [4, 5, 6]}
-    df = pd.DataFrame(data)
-
-    # Perform calculation on DataFrame using Calculator
-    result = perform_calculation_from_dataframe(df)
-    print("Result of operation on DataFrame elements:", result)
-
