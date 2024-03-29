@@ -17,3 +17,7 @@
 2024-03-29 16:56:12,520 - INFO - Performed operation: 0.0 add 5.0 = 5.0
 2024-03-29 16:56:14,437 - INFO - Performed operation: 0.5 sin None = 0.479425538604203
 2024-03-29 16:56:22,031 - INFO - Performed operation: 0.5 log None = -0.6931471805599453
+2024-03-29 17:38:55,950 - ERROR - Not enough arguments provided.
+2024-03-29 17:39:12,717 - INFO - Performed operation: 0.5 log None = -0.6931471805599453
+2024-03-29 17:39:25,550 - ERROR - Not enough arguments provided.
+2024-03-29 17:39:49,400 - ERROR - Not enough arguments provided.
