@@ -21,3 +21,37 @@
 2024-03-29 17:39:12,717 - INFO - Performed operation: 0.5 log None = -0.6931471805599453
 2024-03-29 17:39:25,550 - ERROR - Not enough arguments provided.
 2024-03-29 17:39:49,400 - ERROR - Not enough arguments provided.
+2024-03-29 19:12:53,970 - ERROR - Not enough arguments provided.
+2024-03-29 19:13:06,303 - INFO - Performed addition: 4.0 + 4.0 = 8.0
+2024-03-29 19:13:06,303 - INFO - Performed operation: 4.0 add 4.0 = 8.0
+2024-03-29 19:13:39,350 - INFO - Performed operation: 6.0 sin None = -0.27941549819892586
+2024-03-29 19:15:42,642 - INFO - Performed operation: 6.0 sin None = -0.27941549819892586
+2024-03-29 19:15:47,283 - INFO - Performed operation: 6.0 sin None = -0.27941549819892586
+2024-03-29 19:17:26,896 - ERROR - Invalid number input: clear or None is not a valid number.
+2024-03-29 19:17:26,896 - ERROR - Invalid number input: clear or None is not a valid number.
+2024-03-29 21:00:46,056 - ERROR - Not enough arguments provided.
+2024-03-29 21:00:59,415 - INFO - Performed addition: 5.0 + 5.0 = 10.0
+2024-03-29 21:00:59,415 - INFO - Performed operation: 5.0 add 5.0 = 10.0
+2024-03-29 21:01:12,994 - INFO - Performed subtraction: 4.0 - 5.0 = -1.0
+2024-03-29 21:01:12,995 - INFO - Performed operation: 4.0 subtract 5.0 = -1.0
+2024-03-29 21:01:21,909 - INFO - Performed multiplication: 4.0 * 2.0 = 8.0
+2024-03-29 21:01:21,909 - INFO - Performed operation: 4.0 multiply 2.0 = 8.0
+2024-03-29 21:01:32,349 - INFO - Performed division: 2.0 / 1.0 = 2.0
+2024-03-29 21:01:32,349 - INFO - Performed operation: 2.0 divide 1.0 = 2.0
+2024-03-29 21:01:44,913 - INFO - Performed operation: 4.0 sin None = -0.7568024953079282
+2024-03-29 21:01:54,656 - INFO - Performed operation: 5.0 cos None = 0.28366218546322625
+2024-03-29 21:02:05,319 - INFO - Performed operation: 6.0 tan None = -0.29100619138474915
+2024-03-29 21:02:12,572 - INFO - Performed operation: 10.0 log None = 2.302585092994046
+2024-03-29 21:14:36,021 - ERROR - Not enough arguments provided.
+2024-03-29 21:14:48,912 - INFO - Performed addition: 5.0 + 5.0 = 10.0
+2024-03-29 21:14:48,913 - INFO - Performed operation: 5.0 add 5.0 = 10.0
+2024-03-29 21:14:54,866 - INFO - Performed subtraction: 5.0 - 5.0 = 0.0
+2024-03-29 21:14:54,867 - INFO - Performed operation: 5.0 subtract 5.0 = 0.0
+2024-03-29 21:15:01,110 - INFO - Performed multiplication: 5.0 * 5.0 = 25.0
+2024-03-29 21:15:01,110 - INFO - Performed operation: 5.0 multiply 5.0 = 25.0
+2024-03-29 21:15:05,709 - INFO - Performed division: 5.0 / 5.0 = 1.0
+2024-03-29 21:15:05,710 - INFO - Performed operation: 5.0 divide 5.0 = 1.0
+2024-03-29 21:15:14,878 - INFO - Performed operation: 5.0 sin None = -0.9589242746631385
+2024-03-29 21:15:19,911 - INFO - Performed operation: 5.0 cos None = 0.28366218546322625
+2024-03-29 21:15:23,698 - INFO - Performed operation: 5.0 tan None = -3.380515006246586
+2024-03-29 21:15:27,135 - INFO - Performed operation: 5.0 log None = 1.6094379124341003
